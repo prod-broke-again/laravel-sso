@@ -57,15 +57,15 @@ readonly class SSOService implements SSOServiceInterface
             'metadata' => $this->getRequestMetadata(),
         ]);
 
-        return SsoTokenDTO::fromArray([
-            'token' => $ssoToken->token,
-            'user_id' => $ssoToken->user_id,
-            'partner_identifier' => $ssoToken->partner_identifier,
-            'source_app' => $ssoToken->source_app,
-            'expires_at' => $ssoToken->expires_at,
-            'user_data' => $ssoToken->user_data,
-            'metadata' => $ssoToken->metadata,
-        ]);
+        return new SsoTokenDTO(
+            token: $ssoToken->token,
+            userId: $ssoToken->user_id,
+            partnerIdentifier: $ssoToken->partner_identifier,
+            sourceApp: $ssoToken->source_app,
+            expiresAt: $expiresAt,
+            userData: $ssoToken->user_data,
+            metadata: $ssoToken->metadata ?? [],
+        );
     }
 
     /**

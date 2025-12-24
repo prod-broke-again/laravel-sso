@@ -29,12 +29,22 @@ readonly class SsoTokenDTO
      */
     public static function fromArray(array $data): self
     {
+        // Handle different datetime formats
+        $expiresAt = $data['expires_at'];
+        if ($expiresAt instanceof \Illuminate\Support\Carbon) {
+            $expiresAt = $expiresAt->toDateTimeImmutable();
+        } elseif (is_string($expiresAt)) {
+            $expiresAt = new \DateTimeImmutable($expiresAt);
+        } elseif (!$expiresAt instanceof \DateTimeImmutable) {
+            throw new \InvalidArgumentException('Invalid expires_at format');
+        }
+
         return new self(
             token: $data['token'],
             userId: $data['user_id'],
             partnerIdentifier: $data['partner_identifier'],
             sourceApp: $data['source_app'],
-            expiresAt: new \DateTimeImmutable($data['expires_at']),
+            expiresAt: $expiresAt,
             userData: $data['user_data'],
             metadata: $data['metadata'] ?? [],
         );
