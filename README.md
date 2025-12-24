@@ -95,18 +95,18 @@ Use the Blade component to add SSO login buttons:
 
 ```blade
 {{-- Using partner identifier --}}
-<x-sso-button partner="partner1" />
+<x-sso-sso-button partner="partner1" />
 
 {{-- Using partner model --}}
-<x-sso-button :partner="$partner" />
+<x-sso-sso-button :partner="$partner" />
 
 {{-- Custom styling --}}
-<x-sso-button partner="partner1" class="custom-button-class" />
+<x-sso-sso-button partner="partner1" class="custom-button-class" />
 
 {{-- Custom text --}}
-<x-sso-button partner="partner1">
+<x-sso-sso-button partner="partner1">
     Login to Partner App
-</x-sso-button>
+</x-sso-sso-button>
 ```
 
 ### 2. Manual SSO URL Generation

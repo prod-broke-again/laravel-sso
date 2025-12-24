@@ -28,8 +28,8 @@ Add SSO login buttons to your views:
                     <div class="mt-4">
                         <h5 class="text-center mb-3">Or login with partner:</h5>
                         <div class="text-center">
-                            <x-sso-button partner="partner1" class="btn btn-primary me-2" />
-                            <x-sso-button partner="partner2" class="btn btn-secondary" />
+                            <x-sso-sso-button partner="partner1" class="btn btn-primary me-2" />
+                            <x-sso-sso-button partner="partner2" class="btn btn-secondary" />
                         </div>
                     </div>
                 </div>
