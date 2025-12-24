@@ -1,0 +1,45 @@
+# Laravel/PHP
+/vendor/
+/.phpunit.result.cache
+bootstrap/cache/
+storage/logs/
+storage/framework/cache/
+storage/framework/sessions/
+storage/framework/views/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Composer
+composer.lock
+auth.json
+
+# Node.js
+/node_modules/
+/npm-debug.log
+/yarn-error.log
+
+# Testing
+.phpunit.result.cache
+
+# Local development
+.env
+.env.local
+.env.*.local
+
+# Temporary files
+*.tmp
+*.temp
